@@ -15,13 +15,14 @@ pipeline {
         }
 
         stage('Deploy') {
-            steps {
-                echo 'Deploying application...'
-                sh '''
-                    cp -r dist/* /var/www/html/
-                    sudo systemctl restart nginx
-                '''
-            }
-        }
+    steps {
+        echo 'Deploying application...'
+        sh '''
+            sudo cp -r dist/* /var/www/html/
+            sudo systemctl restart nginx
+        '''
+    }
+}
+
     }
 }
