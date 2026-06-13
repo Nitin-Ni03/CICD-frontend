@@ -1,21 +1,21 @@
 pipeline {
     
-    stages {
+    Stages {
         stage('Install') {
-            steps {
+            Steps {
                 sh 'npm install'
             }
         }
 
         stage('Build') {
-            steps {
+            Steps {
                 sh 'npm run build'
                 // Example: sh 'npm install && npm run build'
             }
         }
 
         stage('Deploy') {
-            steps {
+            Steps {
                 echo 'Deploying application...'
                 sh '''
                     cp -r dist/* /var/www/html/
